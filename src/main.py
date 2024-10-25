@@ -2,9 +2,9 @@
 import pygame
 import sys
 from core.game import Game
-from core.camera import Camera
-from core.dungeon import Dungeon
-from core.player import Player
+from src.core.systems.camera import Camera
+from src.core.systems.dungeon import Dungeon
+from src.core.objects.player import Player
 
 from config import *
 
