@@ -2,9 +2,10 @@
 import pygame
 import sys
 from core.game import Game
-from src.core.systems.camera import Camera
-from src.core.systems.dungeon import Dungeon
-from src.core.objects.player import Player
+from core.systems.camera import Camera
+from core.systems.dungeon import Dungeon
+from core.objects.player import Player
+from ai.game_director import *
 
 from config import *
 
@@ -23,9 +24,12 @@ def main():
     virtual_screen = pygame.Surface((virtual_width, virtual_height))
 
     # Game objects
-    dungeon = Dungeon()  
+    dungeon = Dungeon()
+    dungeon.alter_tile(5*TILE_SIZE_X, 5*TILE_SIZE_Y, "water")  
     player = Player(dungeon)  
     camera = Camera(view_distance, dungeon.width // TILE_SIZE_X, dungeon.height // TILE_SIZE_Y)
+
+    inject_and_update_dungeon(dungeon)
 
     running = True
     while running:

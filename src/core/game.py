@@ -1,6 +1,6 @@
 # src/core/game.py
 import pygame
-from src.core.objects.player import Player
+from core.objects.player import Player
 
 class Game:
     def __init__(self, screen):
