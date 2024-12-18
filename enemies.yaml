@@ -1,0 +1,27 @@
+enemies:
+- amount: 5
+  armor: 1
+  color:
+  - 255
+  - 0
+  - 0
+  damage: 2
+  health: 12
+  name: Goblin Grunt
+  speed: 0.06
+  type: Goblin
+  vision_radius: 5
+  xp: 3
+- amount: 2
+  armor: 2
+  color:
+  - 0
+  - 255
+  - 0
+  damage: 4
+  health: 18
+  name: Orc Warrior
+  speed: 0.08
+  type: Orc
+  vision_radius: 6
+  xp: 5

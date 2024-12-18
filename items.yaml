@@ -1,0 +1,19 @@
+items:
+- amount: 1
+  area: 1
+  class: melee
+  damage: 4
+  description: A basic sword made of iron.
+  name: Iron Sword
+  rarity: common
+  speed: 1.2
+  type: weapon
+- amount: 1
+  area: 1
+  class: melee
+  damage: 2
+  description: A light tunic made of leather.
+  name: Leather Tunic
+  rarity: common
+  speed: 0.8
+  type: armor

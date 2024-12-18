@@ -1,0 +1,49 @@
+items:
+  - type: weapon
+    name: "Iron Sword"
+    description: "A sturdy sword made of iron."
+    rarity: "common"
+    damage: 7
+    class: "melee"
+    speed: 0.9
+    area: 1
+    amount: 1
+
+  - type: weapon
+    name: "Iron Mace"
+    description: "A sturdy sword made of iron."
+    rarity: "common"
+    damage: 12
+    class: "melee"
+    speed: 1
+    area: 1.2
+    amount: 1
+
+  - type: weapon
+    name: "Longbow"
+    description: "A longbow made of yew wood."
+    rarity: "common"
+    damage: 12
+    class: "ranged"
+    speed: 1
+    area: 1
+    amount: 1
+
+  - type: weapon
+    name: "Shortbow"
+    description: "A longbow made of yew wood."
+    rarity: "common"
+    damage: 5
+    class: "ranged"
+    speed: 0.1
+    area: 1
+    amount: 1
+
+  - type: armor
+    name: "Leather Armor"
+    description: "Basic armor made from leather."
+    rarity: "common"
+    defense: 2
+    class: "light"
+    movespeed: 1.1
+    amount: 1

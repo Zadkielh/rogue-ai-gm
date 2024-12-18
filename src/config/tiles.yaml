@@ -1,0 +1,21 @@
+tiles:
+  - name: "sand"
+    color: [210, 180, 140]  # RGB color for tan
+    collide: 0
+    wall: 0
+    rarity: 20
+  - name: "stone"
+    color: [50, 50, 50]
+    collide: 0
+    wall: 0
+    rarity: 50
+  - name: "wall"
+    color: [50, 25, 20]
+    wall: 1
+    collide: 1
+    rarity: 50
+  - name: "cracked_wall"
+    color: [40, 15, 10]
+    wall: 1
+    collide: 1
+    rarity: 20

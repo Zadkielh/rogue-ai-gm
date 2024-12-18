@@ -1,0 +1,9 @@
+dungeon:
+- height: 80
+  name: Cave of Shadows
+  room_max_size: 10
+  room_min_size: 5
+  rooms: 6
+  theme: Cave
+  width: 120
+  wiggly: 0.2

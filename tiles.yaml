@@ -1,0 +1,17 @@
+tiles:
+- collide: false
+  color:
+  - 200
+  - 200
+  - 200
+  name: Stone Floor
+  rarity: 50
+  wall: false
+- collide: true
+  color:
+  - 50
+  - 100
+  - 50
+  name: Mossy Wall
+  rarity: 50
+  wall: true

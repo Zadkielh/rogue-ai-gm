@@ -1,0 +1,9 @@
+dungeon:
+  - name: "Dungeon 1"
+    rooms: 10
+    room_min_size: 5
+    room_max_size: 10
+    theme: "Cave"
+    width: 120
+    height: 80
+    wiggly: 0.2

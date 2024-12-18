@@ -1,0 +1,25 @@
+statics:
+- amount: 3
+  area: 3
+  class: Torch
+  color:
+  - 255
+  - 255
+  - 0
+  cooldown: 5000
+  damage: 2
+  health: 10
+  name: Flickering Torch
+  type: torch
+- amount: 2
+  area: 3
+  class: Bomb
+  color:
+  - 255
+  - 0
+  - 0
+  cooldown: 5000
+  damage: 4
+  health: 10
+  name: Explosive Bomb
+  type: bomb

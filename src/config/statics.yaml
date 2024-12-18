@@ -1,0 +1,18 @@
+statics:
+  - type: bomb
+    name: "Bomb"
+    health: 10
+    color: [10, 10, 10]
+    class: Bomb
+    area: 3
+    damage: 2
+    cooldown: 5000
+    amount: 3
+
+  - type: torch
+    name: "Torch"
+    health: 10
+    color: [255, 255, 0]
+    class: Torch
+    area: 5
+    amount: 4
