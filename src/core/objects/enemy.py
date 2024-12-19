@@ -15,7 +15,7 @@ class Enemy(Entity):
         self.speed = speed
         self.armor = armor
         self.vision_radius = vision_radius
-        self.emits_light = False  # Can change if needed
+        self.emits_light = False
 
         self.xp = xp
 
@@ -40,7 +40,6 @@ class Enemy(Entity):
 
             self.chase_target(target)
         else:
-            # Idle or random movement
             if random.random() < 0.01:
                 return
             dx, dy = self.get_random_direction()
@@ -65,9 +64,6 @@ class Enemy(Entity):
         self.move(dx, dy)
 
     def take_damage(self, amount, source):
-        # Armor can reduce damage if you want, e.g.:
-        # effective_damage = max(0, amount - self.armor)
-        # For now, just apply damage directly:
         self.health -= amount
         if self.health <= 0:
             if isinstance(source, Player):
@@ -79,7 +75,6 @@ class Enemy(Entity):
     def attack(self, target):
         if hasattr(target, 'take_damage'):
             print("Attack")
-            # You could factor armor of player here too if you want
             target.take_damage(self.attack_damage, self)
 
     def die(self):

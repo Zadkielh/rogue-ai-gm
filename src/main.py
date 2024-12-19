@@ -23,7 +23,6 @@ def main():
     pygame.display.set_caption("AI Dungeon Master")
     clock = pygame.time.Clock()
 
-    # Load resources (this sets up the factory)
     factory = load_resources()
 
     # Setup the camera/view
@@ -146,7 +145,7 @@ def main():
     sys.exit()
 
 def request_gpt_data_async(floor, level, kills, health, theme, result_container):
-    result = generate_yaml(floor, level, kills, health, theme)  # your GPT request function
+    result = generate_yaml(floor, level, kills, health, theme)
     result_container["data"] = result
 
 if __name__ == "__main__":

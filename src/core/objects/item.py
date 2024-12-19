@@ -19,7 +19,6 @@ class Item(Entity):
         return f"{self.name} ({self.rarity})"
 
     def use(self, target):
-        # Define a generic use method if needed
         pass
 
     def equip(self, target):
@@ -37,7 +36,6 @@ class Item(Entity):
 
 class Armor(Item):
     def __init__(self, tile_x, tile_y, dungeon, name, description, rarity="common", defense=0, type="armor", movespeed=1, color=(100,100,200), aclass="light"):
-        # Pass tile_x, tile_y, dungeon, name, description to Item constructor
         super().__init__(tile_x, tile_y, dungeon, name, description, rarity, color)
         self.defense = defense
         self.movespeed = movespeed
@@ -54,7 +52,6 @@ class Armor(Item):
 
 class Weapon(Item):
     def __init__(self, tile_x, tile_y, dungeon, name, description, rarity="common", damage=0, type="weapon", speed=1, area=1, color=(50,50,255), wclass="melee"):
-        # Pass tile_x, tile_y, dungeon, name, description to Item constructor
         super().__init__(tile_x, tile_y, dungeon, name, description, rarity, color)
         self.damage = damage
         self.speed = speed
@@ -78,7 +75,6 @@ class ItemFactory:
         self.item_definitions = []
 
     def load_item_definitions(self, file_path):
-        """Load item definitions from a YAML file."""
         with open(file_path, 'r') as file:
             item_data = yaml.safe_load(file)
             if 'items' in item_data:
@@ -87,20 +83,17 @@ class ItemFactory:
                 raise ValueError("No 'items' key found in YAML.")
 
     def create_item(self, item_name, tile_x, tile_y, dungeon):
-        """Create an item instance by name at a given position in the dungeon."""
         for item_def in self.item_definitions:
             if item_def.get('name') == item_name:
                 return self._create_item_from_def(item_def, tile_x, tile_y, dungeon)
         raise ValueError(f"Item '{item_name}' not found in definitions.")
 
     def _create_item_from_def(self, item_def, tile_x, tile_y, dungeon):
-        # Common attributes
         item_type = item_def.get('type')
         name = item_def.get('name', 'Unknown Item')
         description = item_def.get('description', 'No description')
         rarity = item_def.get('rarity', 'common')
 
-        # Different item types have different attributes
         if item_type == 'weapon':
             damage = item_def.get('damage', 0)
             wtype = item_def.get('type', 'weapon')
@@ -115,9 +108,7 @@ class ItemFactory:
             aclass = item_def.get('class', 'light')
             return Armor(tile_x, tile_y, dungeon, name, description, rarity, defense, atype, movespeed, aclass=aclass)
         else:
-            # Generic item
             return Item(tile_x, tile_y, dungeon, name, description, rarity)
 
-# Example usage (assuming you have items.yaml):
 item_factory = ItemFactory()
 item_factory.load_item_definitions(os.path.abspath("src/config/items.yaml"))

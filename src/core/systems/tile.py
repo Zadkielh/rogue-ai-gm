@@ -54,7 +54,6 @@ class TileFactory:
                 collide = tile['collide']
                 wall = tile['wall']
                 rarity = tile['rarity']
-                # Register each tile with its color
                 self.register_tile(name, Tile, tuple(color), collide, wall, rarity)
 
     def register_tile(self, tile_name, tile_class, color, collide, wall, rarity):

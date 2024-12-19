@@ -127,7 +127,6 @@ class Dungeon:
         return static_entity
     
     def load_dungeon_settings(self, file_path):
-        """Load item definitions from a YAML file."""
         with open(file_path, 'r') as file:
             item_data = yaml.safe_load(file)
             if 'dungeon' in item_data:

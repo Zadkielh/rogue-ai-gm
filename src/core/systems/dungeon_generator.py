@@ -186,12 +186,6 @@ class DungeonGenerator:
                 break
 
     def soften_edges(self):
-        # We want a simple CA that never turns floor back into wall.
-        # It can only carve more floor from walls under certain conditions.
-        # Let's say:
-        # - If a wall has <= death_limit wall neighbors, it becomes floor.
-        # - Floors stay floors no matter what.
-
         iterations = 1
         birth_limit = 5
         death_limit = 5
@@ -206,8 +200,6 @@ class DungeonGenerator:
                     if self.grid[y][x] in self.floor_list:
                         new_grid[y][x] = self.grid[y][x]
                     else:
-                        # It's a wall, decide if we should turn it into floor.
-                        # If it has very few wall neighbors, turn it into floor.
                         nearby_floor = self.find_nearest_floor(x, y)
                         tile_to_place = nearby_floor if nearby_floor else random.choices(self.floor_list, self.floor_weights, k=1)[0]
                         nearby_wall = self.find_nearest_wall(x, y)
@@ -230,7 +222,6 @@ class DungeonGenerator:
                     if self.grid[ny][nx] in self.wall_list:
                         wall_count += 1
                 else:
-                    # Out-of-bounds considered wall
                     wall_count += 1
         return wall_count
     
@@ -265,11 +256,8 @@ class DungeonGenerator:
         last_room = self.rooms[-1]
         room_center_x, room_center_y = last_room.center()
 
-        # room.center() gives integer coordinates inside the room,
-        # which should be a floor tile since we carved the room.
         goal_x, goal_y = room_center_x, room_center_y
 
-        # Place the stairs at this center tile
         self.goal = Stairs(goal_x, goal_y)
         self.dungeon.add_entity(self.goal)
 

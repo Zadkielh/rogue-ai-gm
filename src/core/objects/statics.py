@@ -76,9 +76,6 @@ class Static(Entity):
         return random.choice([(0, -1), (0, 1), (-1, 0), (1, 0)])
     
     def explode(self, color=(255, 0, 0)):
-        # Arc: multiple projectiles with different angles, shorter range
-        # Let's say we fire 5 projectiles spread out over a 60-degree arc.
-        # direction is in degrees for example; convert to radians for math functions.
         arc_spread = 360
         num_projectiles = 30
         angle_step = arc_spread / (num_projectiles - 1)
@@ -96,7 +93,6 @@ class Static(Entity):
         self.effect_timer = pygame.time.get_ticks() + 500
     
     def direction_to_vector(self, angle_degrees):
-        # Convert angle in degrees to a normalized direction vector (dx, dy)
         angle_radians = math.radians(angle_degrees)
         dx = math.cos(angle_radians)
         dy = math.sin(angle_radians)

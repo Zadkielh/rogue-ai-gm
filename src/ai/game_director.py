@@ -13,12 +13,9 @@ from core.objects.statics import static_factory
 # Initialize the OpenAI API key (replace with your actual API key)
 api_key = ""
 client = OpenAI(
-    # This is the default and can be omitted
     api_key=api_key,
 )
 
-
-# Function to ask the AI to generate a new tile class
 def generate_yaml(floor, level, kills, health, theme="None"):
     def request_yaml():
       prompt = f"""
